@@ -8,11 +8,11 @@ import AppProvider from './hooks';
 export function App() {
   return (
     <>
-    <GlobalStyle/>    
-    <AppProvider>
-      <Routes/>
-    </AppProvider>
-  </>
+      <GlobalStyle />
+      <AppProvider>
+        <Routes />
+      </AppProvider>
+    </>
   );
 }
 
