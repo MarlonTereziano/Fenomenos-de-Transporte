@@ -22,6 +22,7 @@ export const Container = styled.div`
         top: 0;
         margin-top: 1%;
         font-size: 3rem;
+        text-decoration: underline;
     }
 
 `
