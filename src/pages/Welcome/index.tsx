@@ -1,11 +1,19 @@
 import { Container, SideBar, Content } from './styles';
+import { Input } from 'antd';
 import React from 'react';
 
 export const Welcome: React.FC = () => {
     return (
         <Container>
             <SideBar>
-                <h1>Welcome</h1>
+                <Input placeholder="Tempo" />
+                <br />
+                <Input placeholder="Velocidade" />
+                <br />
+                <Input placeholder="Direção" />
+                <br />
+                <Input placeholder="Sentido" />
+                <br />
             </SideBar>
             <Content>
                 <div className="ft">Fenômenos de Transporte</div>

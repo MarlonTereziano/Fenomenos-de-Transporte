@@ -33,6 +33,10 @@ export const SideBar = styled.div`
     height: 100%;
     background-color: grey;
     border-radius: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 `
 
