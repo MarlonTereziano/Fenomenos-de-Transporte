@@ -31,12 +31,20 @@ export const SideBar = styled.div`
     left: 0;
     width: 20%;
     height: 100%;
-    background-color: grey;
+    background-color: #EEF3F3;
     border-radius: 10px;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+
+    .inputsLabel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
 `
 
