@@ -1,5 +1,5 @@
 import { Container, SideBar, Content } from './styles';
-import { Button, Form, Input, Radio } from 'antd';
+import { Button, Form, Input} from 'antd';
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 
@@ -257,8 +257,6 @@ export const Welcome: React.FC = () => {
                     </Form.Item>
                     <Form.Item label="Field D">
                         <Input placeholder="input placeholder" />
-                        <br />
-                        <br />
                     </Form.Item>
                     <Form.Item label="Field E">
                         <Input placeholder="input placeholder" />
