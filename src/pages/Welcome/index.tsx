@@ -228,8 +228,9 @@ export const Welcome: React.FC = () => {
             </SideBar>
             <Content>
                 <div className="ft">Fenômenos de Transporte</div>
+                <div className="maps">
                 <Line {...config} />
-                <div className="maps"></div>
+                </div>
             </Content>
         </Container>
     );
