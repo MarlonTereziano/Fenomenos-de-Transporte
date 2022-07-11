@@ -1,6 +1,7 @@
 import { Container, SideBar, Content } from './styles';
-import { Input } from 'antd';
-import React from 'react';
+import { Button, Form, Input, Radio } from 'antd';
+import React, { useState } from 'react';
+import 'antd/dist/antd.css';
 
 import { Line, G2 } from '@ant-design/plots';
 import { each, findIndex } from '@antv/util';
@@ -202,29 +203,70 @@ export const Welcome: React.FC = () => {
         ],
     };
 
+    const [form] = Form.useForm();
+    const [formLayout, setFormLayout] = useState('horizontal');
+
+    //tipar Layout
+    const onFormLayoutChange = (layout: string) => {
+        setFormLayout(layout);
+    }
+
+
+    const formItemLayout =
+        formLayout === 'horizontal'
+            ? {
+                labelCol: {
+                    span: 4,
+                },
+                wrapperCol: {
+                    span: 14,
+                },
+            }
+            : null;
+    const buttonItemLayout =
+        formLayout === 'horizontal'
+            ? {
+                wrapperCol: {
+                    span: 14,
+                    offset: 4,
+                },
+            }
+            : null;
+
     return (
         <Container>
             <SideBar>
-                <div className="inputsLabel">
-                    <label> Entre com o Valor Delta</label>
-                    <Input placeholder="Tempo" />
-                    <br />
-                </div>
-                <div className="inputsLabel">
-                    <label> Entre com o Valor Delta</label>
-                    <Input placeholder="Tempo" />
-                    <br />
-                </div>
-                <div className="inputsLabel">
-                    <label> Entre com o Valor Delta</label>
-                    <Input placeholder="Tempo" />
-                    <br />
-                </div>
-                <div className="inputsLabel">
-                    <label> Entre com o Valor Delta</label>
-                    <Input placeholder="Tempo" />
-                    <br />
-                </div>
+                <Form
+                    {...formItemLayout}
+                    layout='vertical'
+                    form={form}
+                    initialValues={{
+                        layout: formLayout,
+                    }}
+                    onValuesChange={onFormLayoutChange}
+                >
+
+                    <Form.Item label="Field A">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Field B">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Field C">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item label="Field D">
+                        <Input placeholder="input placeholder" />
+                        <br />
+                        <br />
+                    </Form.Item>
+                    <Form.Item label="Field E">
+                        <Input placeholder="input placeholder" />
+                    </Form.Item>
+                    <Form.Item {...buttonItemLayout}>
+                        <Button type="primary">Submit</Button>
+                    </Form.Item>
+                </Form>
             </SideBar>
             <Content>
                 <div className="ft">Fenômenos de Transporte</div>

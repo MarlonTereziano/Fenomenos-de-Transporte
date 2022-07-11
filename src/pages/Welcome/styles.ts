@@ -39,13 +39,6 @@ export const SideBar = styled.div`
     justify-content: center;
     box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
 
-    .inputsLabel{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
 `
 
 export const Content = styled.div`
