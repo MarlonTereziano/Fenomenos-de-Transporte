@@ -29,15 +29,15 @@ export const Container = styled.div`
 
 export const SideBar = styled.div`
     left: 0;
-    width: 20%;
+    width: 30%;
     height: 100%;
-    background-color: #EEF3F3;
-    border-radius: 10px;
+    background-color: #1816C4;
+    // border-radius: 5px;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
 
     .inputsLabel{
         display: flex;
