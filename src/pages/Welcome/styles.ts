@@ -21,7 +21,7 @@ export const Container = styled.div`
         position: absolute;
         top: 0;
         margin-top: 1%;
-        font-size: 3rem;
+        font-size: 7vh;
         text-decoration: underline;
     }
 
@@ -34,10 +34,10 @@ export const SideBar = styled.div`
     background-color: #1816C4;
     // border-radius: 5px;
     flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    padding-left: 5%;
 
 `
 
