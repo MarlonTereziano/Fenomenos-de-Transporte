@@ -5,7 +5,7 @@ export const Container = styled.div`
     display:flex;
     align-items: center;
 
-    .maps{
+    .aletas{
         align-items: center;
         justify-content: center;
         display: flex;
@@ -15,6 +15,58 @@ export const Container = styled.div`
         height: 70%;
         box-shadow: 3px 3px 15px rgba(0,0,0,0.5);
         font-size: 5rem;
+
+        .blocoHorizontal{
+            position: relative;
+            left: -35%;
+            width: 10%;
+            height: 90%;
+            background-color: #D9D9D9;
+            border-radius: 30px;
+            z-index: 1;
+        }
+        
+        .blocoVerticalCobre{
+            position: absolute;
+            background-color: #B87333;
+            top: 25%;
+            width: 38%;
+            height: 7%;
+            border-radius: 30px;
+
+            h1{
+                margin-left: 9%;
+                margin-top: -6vh;
+                font-size: 4vh;
+            }
+        }
+        .blocoVerticalAco{
+            position: absolute;
+            background-color: #A4A0A8;
+            width: 38%;
+            height: 7%;
+            border-radius: 30px;
+            h1{
+                margin-left: 9%;
+                margin-top: -6vh;
+                font-size: 4vh;
+            }
+        }
+        .blocoVerticalFerro{
+            position: absolute;
+            background-color: #3F3F46;
+            top: 67%;
+            width: 38%;
+            height: 7%;
+            border-radius: 30px;
+            h1{
+                margin-left: 9%;
+                margin-top: -6vh;
+                font-size: 4vh;
+            }
+        }
+
+
     }
 
     .ft{
