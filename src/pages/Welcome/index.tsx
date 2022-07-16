@@ -271,6 +271,10 @@ export const Welcome: React.FC = () => {
                 <div className="maps">
                     <Line {...config} />
                 </div>
+                <div className="buttons">
+                    <Button>Temperatura</Button>
+                    <Button>Tempo</Button>
+                </div>
             </Content>
         </Container>
     );

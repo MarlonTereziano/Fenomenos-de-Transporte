@@ -47,4 +47,18 @@ export const Content = styled.div`
     justify-content: center;
     width: 100%;
     height: 100%;
+
+    .buttons{
+        width: 100%;
+        height: 10%;
+        position:absolute;
+        bottom: 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+
+        button{
+            margin:5px;
+        }
+    }
 `
