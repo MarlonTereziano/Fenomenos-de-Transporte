@@ -22,7 +22,7 @@ export const Container = styled.div`
         top: 0;
         margin-top: 1%;
         font-size: 7vh;
-        text-decoration: underline;
+        color: #1816C4;
     }
 
 `
@@ -37,7 +37,44 @@ export const SideBar = styled.div`
     box-shadow: 3px 3px 15px rgba(0,0,0,0.7);
     display: flex;
     justify-content: center;
-    padding-left: 5%;
+    align-items: center;
+
+    .logoIF{
+        margin-top: 1%;
+        width: 10%;
+        top: 0;
+        position: absolute;
+    }
+
+    .buttonTempAleta{
+        h1{
+            font-size: 3.5vh;
+        }
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+    }
+
+    .buttonTempAmbiente{
+        h1{
+            font-size: 3.5vh;
+        }
+        padding-left: 10%;
+        padding-right: 10%;
+        width: 100%;
+    }
+
+    .contentTemp{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80%;
+        height: 30%;
+        box-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+        border-radius: 15px;
+        background-color: #FFFFFF;
+    }
 
 `
 
@@ -60,5 +97,22 @@ export const Content = styled.div`
         button{
             margin:5px;
         }
+    }
+`
+
+export const Footer = styled.div`
+    background-color: black;
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8%;
+    padding-top: 1%;
+    h1{
+        font-size: 4vh;
+        color: white;
     }
 `
