@@ -1,5 +1,5 @@
 import { Container, SideBar, Content, Footer } from './styles';
-import { Slider, Image } from 'antd';
+import { Slider} from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
 import logoIF from '../../assets/img/if.png';
@@ -9,7 +9,7 @@ export const Welcome: React.FC = () => {
     return (
         <Container>
             <SideBar>
-                <img className='logoIF' src={logoIF} />
+                <img className='logoIF' alt="" src={logoIF} />
                 <div className="contentTemp">
                     <div className="buttonTempAleta">
                         <h1>Temperatura Aleta</h1>
