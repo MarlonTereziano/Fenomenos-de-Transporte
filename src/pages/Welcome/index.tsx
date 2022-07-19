@@ -1,14 +1,20 @@
-import { Container, SideBar, Content, Footer } from './styles';
+import { Container, SideBar, Content, Footer, AletaTemp } from './styles';
 import { Slider } from 'antd';
-import React from 'react';
+import React, {useState} from 'react';
 import 'antd/dist/antd.css';
 import logoIF from '../../assets/img/if.png';
 
-import { valueSliderAleta } from './aletas';
-import { valueSliderAmbiente } from './aletas';
+
 
 
 export const Welcome: React.FC = () => {
+
+    const [tempAleta, setTempAleta] = useState(0);
+    const [tempAmbiente, setTempAmbiente] = useState(0);
+
+    const mCobre = (tempAleta+tempAmbiente) * 0.052 * 70;
+    const mAluminio = (tempAleta+tempAmbiente) * 0.032 * 70;
+    const mFerro = (tempAleta+tempAmbiente) * 0.014 * 70 ;
     
 
     return (
@@ -19,11 +25,11 @@ export const Welcome: React.FC = () => {
                     <div className="buttonTempAleta">
                         
                         <h1>Temperatura Aleta (K)</h1>
-                        <Slider min={50} max={100} onChange={(value) => valueSliderAleta(value)} />
+                        <Slider min={50} max={100} onChange={(value) => {setTempAleta(value)}} />
                     </div>
                     <div className="buttonTempAmbiente">
                         <h1>Temperatura Ambiente</h1>
-                        <Slider defaultValue={20} onChange={(value2) => valueSliderAmbiente(value2)}/>
+                        <Slider onChange={(value) => {setTempAmbiente(value)}}/>
                     </div>
                 </div>
 
@@ -33,13 +39,19 @@ export const Welcome: React.FC = () => {
                 <div className="aletas">
                     <div className="blocoHorizontal" />
                     <div className="blocoVerticalCobre">
-                        <h1>Cobre</h1>
+                    <h1>Cobre</h1>
+                        <AletaTemp par={mCobre}>
+                        </AletaTemp>
                     </div>
-                    <div className="blocoVerticalAco">
-                        <h1>Aço</h1>
+                    <div className="blocoVerticalAluminio">
+                        <h1>Aluminio</h1>
+                        <AletaTemp par={mAluminio}>
+                        </AletaTemp>
                     </div>
                     <div className="blocoVerticalFerro">
                         <h1>Ferro</h1>
+                        <AletaTemp par={mFerro}>
+                        </AletaTemp>
                     </div>
                 </div>
             </Content>

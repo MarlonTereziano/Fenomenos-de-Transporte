@@ -1,11 +1,20 @@
-import { useCallback } from 'react';
 import styled from 'styled-components';
 
 // font-size: #${props => props.fontSize};
-import {valueSliderAleta} from './aletas';
-import {valueSliderAmbiente} from './aletas';
+interface Props {
+    par: number;
+}
 
-
+export const AletaTemp = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: -1%;
+    border-radius: 30px;
+    height: 60%;
+    background-color: rgba(250, ${(props: Props) => props.par}, 0, 1);
+`
 
 export const Container = styled.div`
     width: 100vw;
@@ -50,7 +59,7 @@ export const Container = styled.div`
                 
             }
         }
-        .blocoVerticalAco{
+        .blocoVerticalAluminio{
             position: absolute;
             background-color: #A4A0A8;
             width: 38%;
