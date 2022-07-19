@@ -1,9 +1,18 @@
+import { useCallback } from 'react';
 import styled from 'styled-components';
+
+// font-size: #${props => props.fontSize};
+import {valueSliderAleta} from './aletas';
+import {valueSliderAmbiente} from './aletas';
+
+
+
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
     display:flex;
     align-items: center;
+    justify-content: center;
 
     .aletas{
         align-items: center;
@@ -38,6 +47,7 @@ export const Container = styled.div`
                 margin-left: 9%;
                 margin-top: -6vh;
                 font-size: 4vh;
+                
             }
         }
         .blocoVerticalAco{

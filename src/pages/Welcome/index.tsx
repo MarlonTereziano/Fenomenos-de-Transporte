@@ -4,7 +4,12 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import logoIF from '../../assets/img/if.png';
 
+import { valueSliderAleta } from './aletas';
+import { valueSliderAmbiente } from './aletas';
+
+
 export const Welcome: React.FC = () => {
+    
 
     return (
         <Container>
@@ -12,12 +17,13 @@ export const Welcome: React.FC = () => {
                 <img className='logoIF' alt="" src={logoIF} />
                 <div className="contentTemp">
                     <div className="buttonTempAleta">
+                        
                         <h1>Temperatura Aleta (K)</h1>
-                        <Slider min={50} max={100} />
+                        <Slider min={50} max={100} onChange={(value) => valueSliderAleta(value)} />
                     </div>
                     <div className="buttonTempAmbiente">
                         <h1>Temperatura Ambiente</h1>
-                        <Slider defaultValue={20} />
+                        <Slider defaultValue={20} onChange={(value2) => valueSliderAmbiente(value2)}/>
                     </div>
                 </div>
 
