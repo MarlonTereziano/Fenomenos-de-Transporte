@@ -12,9 +12,11 @@ export const Welcome: React.FC = () => {
     const [tempAleta, setTempAleta] = useState(0);
     const [tempAmbiente, setTempAmbiente] = useState(0);
 
-    const mCobre = (tempAleta+tempAmbiente) * 0.052 * 70;
-    const mAluminio = (tempAleta+tempAmbiente) * 0.032 * 70;
-    const mFerro = (tempAleta+tempAmbiente) * 0.014 * 70 ;
+    const mCobre = ((tempAleta-tempAmbiente) * 0.032 * 100)+255;
+    const mAluminio = ((tempAleta-tempAmbiente) * 0.052 * 100)+255;
+    const mFerro = ((tempAleta-tempAmbiente) * 0.014 * 100) +255;
+
+    console.log(mCobre, mAluminio, mFerro);
     
 
     return (
@@ -25,11 +27,11 @@ export const Welcome: React.FC = () => {
                     <div className="buttonTempAleta">
                         
                         <h1>Temperatura Aleta (K)</h1>
-                        <Slider min={50} max={100} onChange={(value) => {setTempAleta(value)}} />
+                        <Slider min={50} max={100} onChange={(value) => {setTempAleta(value*-1)}} />
                     </div>
                     <div className="buttonTempAmbiente">
                         <h1>Temperatura Ambiente</h1>
-                        <Slider onChange={(value) => {setTempAmbiente(value)}}/>
+                        <Slider max={50} onChange={(value) => {setTempAmbiente(value*-1)}}/>
                     </div>
                 </div>
 
@@ -39,17 +41,17 @@ export const Welcome: React.FC = () => {
                 <div className="aletas">
                     <div className="blocoHorizontal" />
                     <div className="blocoVerticalCobre">
-                    <h1>Cobre</h1>
+                    <h1>Cobre: K=380 W/(M*K)</h1>
                         <AletaTemp par={mCobre}>
                         </AletaTemp>
                     </div>
                     <div className="blocoVerticalAluminio">
-                        <h1>Aluminio</h1>
+                        <h1>Aluminio: K=140 W/(M*K)</h1>
                         <AletaTemp par={mAluminio}>
                         </AletaTemp>
                     </div>
                     <div className="blocoVerticalFerro">
-                        <h1>Ferro</h1>
+                        <h1>Ferro: K=80 W/(M*K)</h1>
                         <AletaTemp par={mFerro}>
                         </AletaTemp>
                     </div>
