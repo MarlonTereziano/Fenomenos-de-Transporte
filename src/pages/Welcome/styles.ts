@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 // font-size: #${props => props.fontSize};
+//${(props: Props) => props.par}
+//background-color: rgba(255,${(props: Props) => props.par},0,1);
 interface Props {
     par: number;
 }
@@ -13,7 +15,7 @@ export const AletaTemp = styled.div`
     margin-top: -1%;
     border-radius: 30px;
     height: 60%;
-    background-color: rgba(250, ${(props: Props) => props.par}, 0, 1);
+    background-color: rgba(255,${(props: Props) => props.par},0,1);
 `
 
 export const Container = styled.div`
