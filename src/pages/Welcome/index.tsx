@@ -9,12 +9,12 @@ import logoIF from '../../assets/img/if.png';
 
 export const Welcome: React.FC = () => {
 
-    const [tempAleta, setTempAleta] = useState(0);
-    const [tempAmbiente, setTempAmbiente] = useState(0);
+    const [tempAleta, setTempAleta] = useState(Number);
+    const [tempAmbiente, setTempAmbiente] = useState(50);
 
     const mCobre = ((tempAleta-tempAmbiente) * 0.032 * 100)+255;
     const mAluminio = ((tempAleta-tempAmbiente) * 0.052 * 100)+255;
-    const mFerro = ((tempAleta-tempAmbiente) * 0.014 * 100) +255;
+    const mFerro = ((tempAleta-tempAmbiente) * 0.014 * 100)+255;
 
     console.log(mCobre, mAluminio, mFerro);
     
