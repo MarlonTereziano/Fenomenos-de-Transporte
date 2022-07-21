@@ -119,7 +119,7 @@ export const Container = styled.div`
             color: #359830;
         }
         h2{
-            margin-right: -60%;
+
             margin-top: -3%;
             font-size: 5vh;
             color: black;

@@ -37,7 +37,7 @@ export const Welcome: React.FC = () => {
             <Content>
                 <div className="ft">
                 <h1>Fenômenos de Transporte: Taxa de transferência de Calor em Aletas</h1>
-                <h2>M=√hPkAc * θb</h2>
+                <h2>M=√1000.π.2.10^-³.K.π.(2.10^-³)²/4.θb</h2>
                 </div>
                 <div className="aletas">
                     <div className="blocoHorizontal" />
