@@ -1,5 +1,5 @@
 import { Container, SideBar, Content, Footer, AletaTemp } from './styles';
-import { Slider } from 'antd';
+import { Slider, Input } from 'antd';
 import React, {useState} from 'react';
 import 'antd/dist/antd.css';
 import logoIF from '../../assets/img/if.png';
@@ -10,11 +10,14 @@ import logoIF from '../../assets/img/if.png';
 export const Welcome: React.FC = () => {
 
     const [tempAleta, setTempAleta] = useState(Number);
-    const [tempAmbiente, setTempAmbiente] = useState(50);
+    const [tempAmbiente, setTempAmbiente] = useState(Number);
 
-    const mCobre = ((tempAleta-tempAmbiente) * 0.032 * 100)+255;
-    const mAluminio = ((tempAleta-tempAmbiente) * 0.052 * 100)+255;
-    const mFerro = ((tempAleta-tempAmbiente) * 0.014 * 100)+255;
+    const mCobre = Math.sqrt(1000 * 3.14 * 0.002 * 380 * 3.14 * 0.000001) * (tempAleta-tempAmbiente) * 29.48; // 29.48 é o multiplicador comum para o rgb 255
+    const mInputCobre = Math.sqrt(1000 * 3.14 * 0.002 * 380 * 3.14 * 0.000001) * (tempAleta-tempAmbiente);
+    const mAluminio = Math.sqrt(1000 * 3.14 * 0.002 * 140 * 3.14 * 0.000001)* (tempAleta-tempAmbiente)* 29.48;
+    const mInputAluminio = Math.sqrt(1000 * 3.14 * 0.002 * 140 * 3.14 * 0.000001)* (tempAleta-tempAmbiente);
+    const mFerro = Math.sqrt(1000 * 3.14 * 0.002 * 80 * 3.14 * 0.000001)* (tempAleta-tempAmbiente)* 29.48;
+    const mInputFerro = Math.sqrt(1000 * 3.14 * 0.002 * 80 * 3.14 * 0.000001)* (tempAleta-tempAmbiente);
 
     console.log(mCobre, mAluminio, mFerro);
     
@@ -33,6 +36,9 @@ export const Welcome: React.FC = () => {
                         <h1>Temperatura Ambiente</h1>
                         <Slider max={50} onChange={(value) => {setTempAmbiente(value*-1)}}/>
                     </div>
+                </div>
+                <div className=''>
+
                 </div>
 
             </SideBar>
@@ -54,6 +60,11 @@ export const Welcome: React.FC = () => {
                         <h1>Ferro: K=80 W/(M*K)</h1>
                         <AletaTemp par={mFerro}>
                         </AletaTemp>
+                    </div>
+                    <div className="inputHorizontal" >
+                        <Input value={mInputCobre*-1} />
+                        <Input value={mInputAluminio*-1} />
+                        <Input value={mInputFerro*-1} />
                     </div>
                 </div>
             </Content>
